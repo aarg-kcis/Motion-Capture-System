@@ -1,0 +1,15 @@
+<!-- To add new camera: 1: make a copy of camx_tracker.py (x denotes camera number), 2: Add a new node in this launch file and change the paramters accordingly -->
+
+<launch>
+   <node name="CT0" pkg="pibot" type="cam0_tracker.py" output="screen" >
+	   <param name="IP" value="10.2.24.65"/>
+	   <param name="PORT" value="6666"/>
+   </node>
+   <node name="CT1" pkg="pibot" type="cam1_tracker.py" output="screen" >
+	   <param name="IP" value="10.2.24.65"/>
+	   <param name="PORT" value="6667"/>
+   </node>
+
+   <node name="GlobalPositions" pkg="pibot" type="findGlobalPose.py" output="screen">
+   </node>
+</launch>

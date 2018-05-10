@@ -1,0 +1,12 @@
+<!-- To add new camera: 1: make a copy of camx_tracker.py (x denotes camera number), 2: Add a new node in this launch file and change the paramters accordingly -->
+
+<launch>
+   <node name="Calibration" pkg="testpkg" type="calib_launch.py" output="screen" >
+      <param name="numcam" value="3"/>
+      <param name="numbot" value="4"/>
+      <param name="ports" type="string" value="6660, 6661, 6663"/>
+	  <param name="ips" type="string" value="localhost, localhost, localhost"/>
+	  <param name="calib_file" type="string" value="somefilename2"/>
+	  <param name="cam_pairs" type="string" value="0:3, 1:0"/>
+   </node>
+</launch>

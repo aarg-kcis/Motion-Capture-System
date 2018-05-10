@@ -1,0 +1,14 @@
+<!-- To add new camera: 1: make a copy of camx_tracker.py (x denotes camera number), 2: Add a new node in this launch file and change the paramters accordingly -->
+
+<launch>
+   <node name="campose" pkg="testpkg" type="init.py" output="screen" >
+      <param name="numcam" value="3"/>
+      <param name="numbot" value="6"/>
+      <param name="ports" type="string" value="6660, 6661, 6663"/>
+	  <param name="ips" type="string" value="192.168.1.4, 192.168.1.4, 192.168.1.4"/>
+   </node>
+   <node name="globalpose" pkg="testpkg" type="findGlobalPose2.py" output="screen" >
+      <param name="wports" type="string" value="6660, 6661, 6663"/>
+
+   </node>
+</launch>
